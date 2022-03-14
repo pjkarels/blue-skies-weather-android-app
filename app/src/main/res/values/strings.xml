@@ -1,6 +1,6 @@
 <resources>
+    <string name="bottom_bar_item_current">Current</string>
     <string name="app_name">Blue Skies Weather</string>
     <string name="bottom_bar_item_daily">Daily</string>
     <string name="bottom_bar_item_hourly">Hourly</string>
-    <string name="bottom_bar_item_maps">Maps</string>
 </resources>

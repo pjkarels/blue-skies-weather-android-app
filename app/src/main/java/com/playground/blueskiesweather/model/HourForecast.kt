@@ -1,6 +1,6 @@
 package com.playground.blueskiesweather.model
 
-data class HourForecast(val temp: Double,
+data class HourForecast(val temp: Int,
                         val conditions: String,
                         val time: String,
                         val icon: String,
