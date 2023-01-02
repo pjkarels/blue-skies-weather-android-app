@@ -3,6 +3,7 @@ package com.playground.blueskiesweather
 import android.os.Bundle
 import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
+import androidx.activity.viewModels
 import androidx.compose.foundation.Image
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.padding
@@ -39,7 +40,10 @@ import com.playground.blueskiesweather.model.CurrentConditions
 import com.playground.blueskiesweather.model.DayForecast
 import com.playground.blueskiesweather.model.HourForecast
 import com.playground.blueskiesweather.ui.theme.BlueSkiesWeatherTheme
+import com.playground.blueskiesweather.vm.ForecastViewModel
+import dagger.hilt.android.AndroidEntryPoint
 
+@AndroidEntryPoint
 class MainActivity : ComponentActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -48,6 +52,8 @@ class MainActivity : ComponentActivity() {
                 // A surface container using the 'background' color from the theme
                 Surface(color = MaterialTheme.colors.background) {
                     val navController = rememberNavController()
+                    val viewModel: ForecastViewModel by viewModels()
+//                    viewModel.getForecast()
                     Scaffold(
                         bottomBar = {
                             BottomBar(navController, listOf(Screen.DailyScreen, Screen.HourlyScreen))

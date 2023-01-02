@@ -10,7 +10,7 @@ import javax.inject.Inject
 import kotlinx.coroutines.launch
 
 @HiltViewModel
-class ForecastViewModel @Inject constructor(val forecastRepository: ForecastRepository): ViewModel() {
+class ForecastViewModel @Inject constructor(private val forecastRepository: ForecastRepository): ViewModel() {
 
     fun getForecast() {
         viewModelScope.launch {
